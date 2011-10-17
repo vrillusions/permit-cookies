@@ -1,0 +1,5 @@
+= Permit Cookies
+
+I'm not the original author.  It appears to be abandoned by him and so I'm just bumping the supported firefox version number.  I'm only going to fix bugs related to new versions of firefox (maybe) but will not add any new features.
+
+- [author's site](http://gorgias.de/mfe/)
