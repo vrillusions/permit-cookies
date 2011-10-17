@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://pcookie/skin/pcookie.css" type="text/css"?>
+
+<overlay id="pcookie_overlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="chrome://pcookie/content/pcookie.js"/>
+  <script type="application/x-javascript" src="chrome://pcookie/content/prefUtils.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="pcookieStrings" src="chrome://pcookie/locale/pcookie.properties"/>
+  </stringbundleset>
+
+  <commandset id="mainCommandSet">
+	  <command id="cmd_pcookie" oncommand="pCookie.permit();"/>
+	</commandset>
+	
+	<keyset id="mainKeyset">
+    <key id="key_pcookie2" key="C" modifiers="alt" command="cmd_pcookie" />
+	</keyset>
+
+  <statusbar id="status-bar">
+    <statusbarpanel id="pcookie-status-button" insertafter="page-report-button"
+        class="statusbarpanel-menu-iconic"
+        onclick="if (event.button == 0) pCookie.permit();">
+    </statusbarpanel>
+  </statusbar>
+
+
+</overlay>
+

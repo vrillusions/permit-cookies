@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://pcookie/locale/pcookie.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?>
+
+<dialog id="pcDialog"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         title="&window.title;"
+         buttons="accept, cancel"
+         onload="pCookie.initDialog();"
+         ondialogaccept="return pCookie.onDialogOK();"
+         persist="screenX screenY">
+
+
+  <script type="application/x-javascript" src="chrome://pcookie/content/pcookie.js"/>
+  <script type="application/x-javascript" src="chrome://pcookie/content/prefUtils.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="pcookieStrings" src="chrome://pcookie/locale/pcookie.properties"/>
+  </stringbundleset>
+
+  <hbox>
+    <spacer style="width: 25px"/>
+    <vbox flex="1">
+      <hbox>
+        <label id="stateLabel" value="&label.status;" />
+        <label id="stateValue" value=" " />
+      </hbox>
+      <hbox flex="1">
+        
+        <textbox id="url" size="35" oninput="pCookie.updateStatus();"/>
+     <!--   <button label="Host" accesskey="H" oncommand="pCookie.stripUrl();" /> -->
+      </hbox>
+      <radiogroup id="pRadiogroup" orient="horizontal">
+        <radio label="&label.allow;" selected="true" id="allow" />
+        <radio label="&label.session;" id="session" />
+        <radio label="&label.block;" id="block" />
+        <radio label="&label.remove;" id="remove" />
+      </radiogroup>
+      <spacer style="height: 10px"/>
+      <checkbox label="&label.tabs;" id="tabs" oncommand="pCookie.onTabsChanged();" />
+    </vbox>
+    <spacer style="width: 25px"/>
+  </hbox>
+  <spacer style="height: 10px"/>
+
+</dialog>
+

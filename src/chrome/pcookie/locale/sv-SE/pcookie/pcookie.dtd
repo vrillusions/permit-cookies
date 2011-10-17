@@ -1,0 +1,13 @@
+
+<!ENTITY  window.title    "Cookiebefogenheter">
+
+<!ENTITY  label.status    "Nuvarande status:">
+
+<!ENTITY  label.allow     "Tillåt">
+<!ENTITY  label.session   "Session">
+<!ENTITY  label.block     "Blockera">
+<!ENTITY  label.remove    "Tag bort">
+
+<!ENTITY  label.tabs      "Sätt befogenheter för alla öppna flikar">
+
+

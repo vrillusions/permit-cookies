@@ -1,0 +1,23 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+#pcookie-status-button {
+  list-style-image: url("notset.png");
+}
+
+#pcookie-status-button[status="notset"] {
+  list-style-image: url("notset.png");
+}
+
+#pcookie-status-button[status="allowed"] {
+  list-style-image: url("allowed.png");
+}
+
+#pcookie-status-button[status="blocked"] {
+  list-style-image: url("blocked.png");
+}
+
+#pcookie-status-button[status="session"] {
+  list-style-image: url("session.png");
+}
+

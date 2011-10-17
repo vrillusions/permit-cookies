@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://pcookie/locale/prefs.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/" type="text/css"?>
+
+<dialog id="pref-pcookie"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         title="&window.title;"
+         onload="prefUtils.onLoad('pref-pcookie');"
+         ondialogaccept="prefUtils.onOK('pref-pcookie', ' ');"
+         height="120"
+         width="250"
+         persist="screenX screenY">
+
+  <script type="application/x-javascript" src="chrome://pcookie/content/prefUtils.js"/>
+
+  <vbox>
+    <hbox align="center">
+      <checkbox id="stripwww" preftype="bool" prefstring="pcookies.stripwww"
+          label="&label.strip;"/>
+    </hbox>
+  </vbox>
+
+</dialog>
