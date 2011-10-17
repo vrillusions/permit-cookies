@@ -19,13 +19,14 @@
     <key id="key_pcookie2" key="C" modifiers="alt" command="cmd_pcookie" />
 	</keyset>
 
-  <statusbar id="status-bar">
-    <statusbarpanel id="pcookie-status-button" insertafter="page-report-button"
-        class="statusbarpanel-menu-iconic"
-        onclick="if (event.button == 0) pCookie.permit();">
-    </statusbarpanel>
-  </statusbar>
-
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton class="toolbarbutton-1 chromeclass-toolbar-additional"
+        id="pcookie-status-button"
+        tooltiptext="Permit Cookie"
+        label="Permit Cookie"
+        oncommand="pCookie.permit();">
+    </toolbarbutton>
+  </toolbarpalette>
 
 </overlay>
 

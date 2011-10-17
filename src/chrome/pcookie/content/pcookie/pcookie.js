@@ -40,6 +40,16 @@ var pCookie =
 
   init: function()
   {
+    var addonBar = document.getElementById("addon-bar");
+    if (addonBar) {
+      if (!document.getElementById("pcookie-status-button")) {
+        var addonBarCloseButton = document.getElementById("addonbar-closebutton")
+        //This is to force the button to the left side
+        //addonBar.insertItem("pcookie-status-button", addonBarCloseButton.nextSibling);
+        addonBar.insertItem("pcookie-status-button");
+        addonBar.collapsed = false;
+      }
+    }
     try {
       gBrowser.addProgressListener(pCookieProgressListener);
     }catch(e){}
