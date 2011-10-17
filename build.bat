@@ -10,8 +10,9 @@ mkdir build
 xcopy /s src build
 
 REM compress pcookie.jar file
-cd build\chrome
-%P7ZIP% a pcookie.jar pcookie
+cd build\chrome\pcookie
+%P7ZIP% a ..\pcookie.jar *
+cd ..
 rmdir /s /q pcookie
 
 REM compress whole project
