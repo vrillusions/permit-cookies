@@ -1,10 +1,10 @@
 
 overlay	chrome://browser/content/browser.xul	chrome://pcookie/content/pcookie.xul
-content	pcookie	jar:chrome/pcookie.jar!/content/pcookie/
+content	pcookie	chrome/content/
 
-skin	pcookie	classic/1.0	jar:chrome/pcookie.jar!/skin/classic/pcookie/
+skin	pcookie	classic/1.0	chrome/skin/classic/
 style	chrome://browser/content/browser.xul	chrome://pcookie/skin/pcookie.css
 style	chrome://global/content/customizeToolbar.xul	chrome://pcookie/skin/pcookie.css
 
-locale	pcookie	en-US	jar:chrome/pcookie.jar!/locale/en-US/pcookie/
-locale	pcookie	sv-SE	jar:chrome/pcookie.jar!/locale/sv-SE/pcookie/
+locale	pcookie	en-US	chrome/locale/en-US/
+locale	pcookie	sv-SE	chrome/locale/sv-SE/
