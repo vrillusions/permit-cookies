@@ -6,8 +6,8 @@
  **/
 
 // settings
-_DEBUG = false;
-AUTO_SET_PREFS = true;
+var _DEBUG = false;
+var AUTO_SET_PREFS = true;
 
 if(_DEBUG) dump("in prefutils\n");
 

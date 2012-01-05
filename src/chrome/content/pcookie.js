@@ -4,7 +4,7 @@
 // 2005-09-22
 //////////////////////////////////
 
-_DEBUG = false;
+var _DEBUG = false;
 
 
 var pCookieProgressListener =
