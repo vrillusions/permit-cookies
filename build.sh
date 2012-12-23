@@ -9,7 +9,7 @@ find . -name *.DS_Store -type f -exec rm {} \;
 
 # Compress src into xpi
 cd build && \
-zip -r pcookie.xpi -xi * && \
+zip -r pcookie2.xpi -xi * && \
 rm -rf chrome && \
 rm -rf chrome.manifest && \
 rm -rf install.rdf

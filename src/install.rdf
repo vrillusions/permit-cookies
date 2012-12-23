@@ -4,23 +4,24 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
-    <em:id>{87F33C12-9641-45e5-AAF5-6215F89AF01B}</em:id>
-    <em:version>0.6.2.4</em:version>
+    <em:id>{789788CE-4CE0-11E2-827F-D5D06088709B}</em:id>
+    <em:version>1.0.0</em:version>
 
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>1.0+</em:minVersion>
-        <em:maxVersion>100.*</em:maxVersion>
+        <em:minVersion>4.0.*</em:minVersion>
+        <em:maxVersion>19.*</em:maxVersion>
       </Description>
     </em:targetApplication>
     
-    <em:name>Permit Cookies</em:name>
+    <em:name>Permit Cookies 2</em:name>
     <em:description>Set cookie permissions for the site you are viewing</em:description>
-    <em:creator>Daniel Lindkvist</em:creator>
+    <em:creator>Todd Eddy</em:creator>
     <em:iconURL>chrome://pcookie/content/gorgias.png</em:iconURL>
     <em:optionsURL>chrome://pcookie/content/prefdialog.xul</em:optionsURL>
-    <em:homepageURL>http://mfe.gorgias.de/</em:homepageURL>
+    <em:homepageURL>http://github.com/vrillusions/permit-cookies</em:homepageURL>
+    <em:type>2</em:type>
 
   </Description>
 </RDF>

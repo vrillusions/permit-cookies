@@ -12,7 +12,7 @@ xcopy /s src build
 REM Compress src into xpi
 cd build
 REM yes this SHOULD cause an infinite loop but 7zip is better than that
-%P7ZIP% a -tzip pcookie.xpi *
+%P7ZIP% a -tzip pcookie2.xpi *
 
 echo.
 echo Complete, file is in build directory
