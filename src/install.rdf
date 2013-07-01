@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<!-- FMR maxVersion listing: https://addons.mozilla.org/en-US/firefox/pages/appversions/ -->
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -11,10 +12,10 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>4.0.*</em:minVersion>
-        <em:maxVersion>19.*</em:maxVersion>
+        <em:maxVersion>24.*</em:maxVersion>
       </Description>
     </em:targetApplication>
-    
+
     <em:name>Permit Cookies 2</em:name>
     <em:description>Set cookie permissions for the site you are viewing</em:description>
     <em:creator>Todd Eddy</em:creator>
