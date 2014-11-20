@@ -15,7 +15,7 @@
    id="svg2985"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   inkscape:export-filename="d:\Desktop\session-32.png"
+   inkscape:export-filename="d:\Desktop\allowed-32.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    sodipodi:docname="pcookie-32.svg">
@@ -60,30 +60,30 @@
        id="linearGradient3937"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(0,1.73e-6)"
-       x1="8"
-       y1="5.999999"
-       x2="10"
-       y2="13.999999" />
+       x1="19"
+       y1="16.999998"
+       x2="22"
+       y2="25.999998" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3856"
        id="linearGradient3939"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(3.9999997e-8,1.7e-6)"
-       x1="10"
-       y1="5.999999"
-       x2="12"
-       y2="11.999999" />
+       x1="20"
+       y1="15.999998"
+       x2="22"
+       y2="24.999998" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3844"
        id="linearGradient3941"
        gradientUnits="userSpaceOnUse"
        gradientTransform="translate(3.9999998e-8,1.7e-6)"
-       x1="8"
-       y1="3.999999"
-       x2="10"
-       y2="11.999999" />
+       x1="16"
+       y1="16.999998"
+       x2="20"
+       y2="28.999998" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -93,9 +93,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="16.125422"
-     inkscape:cx="10.572793"
+     inkscape:cx="3.4411967"
      inkscape:cy="15.98548"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer4"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
@@ -163,7 +163,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="allowed"
-     style="display:none">
+     style="display:inline">
     <path
        style="fill:url(#linearGradient3941);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="M 19.122935,29.127206 19.55275,28.679228 19.982566,28.231252 30.298164,17.479779 26,13 l -6.151751,6.411684 -0.362658,0.377979 -0.362656,0.377984 -3.438534,-3.583824 -4.298163,4.479779 7.736697,8.063604 z"
