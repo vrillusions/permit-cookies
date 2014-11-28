@@ -1,5 +1,5 @@
 # Permit Cookies [![Project Status](http://stillmaintained.com/vrillusions/permit-cookies.png)](http://stillmaintained.com/vrillusions/permit-cookies)
 
-I'm not the original author.  It appears to be abandoned by him and so I'm just bumping the supported firefox version number.  I'm only going to fix bugs related to new versions of firefox (maybe) but will not add any new features.
+I'm not the original author.  It appears to be abandoned by him and so I'm just bumping the supported firefox version number (note: firefox doesn't automatically disable extensions so this no longer applies).  I'm only going to fix bugs related to new versions of firefox (maybe).  May add minor enhancements but a key feature of this add on is that it's very lean and I plan to keep it that way.
 
 - [author's site](http://gorgias.de/mfe/)
