@@ -11,7 +11,6 @@
          ondialogaccept="return pCookie.onDialogOK();"
          persist="screenX screenY">
 
-
   <script type="application/x-javascript" src="chrome://pcookie/content/pcookie.js"/>
   <script type="application/x-javascript" src="chrome://pcookie/content/prefUtils.js"/>
 
@@ -27,9 +26,9 @@
         <label id="stateValue" value=" " />
       </hbox>
       <hbox flex="1">
-        
+
         <textbox id="url" size="35" oninput="pCookie.updateStatus();"/>
-     <!--   <button label="Host" accesskey="H" oncommand="pCookie.stripUrl();" /> -->
+        <!-- <button label="Host" accesskey="H" oncommand="pCookie.stripUrl();" /> -->
       </hbox>
       <radiogroup id="pRadiogroup" orient="horizontal">
         <radio label="&label.allow;" selected="true" id="allow" />
@@ -45,4 +44,3 @@
   <spacer style="height: 10px"/>
 
 </dialog>
-

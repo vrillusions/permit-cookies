@@ -92,7 +92,7 @@ var prefUtils =
         else if (elt == "radiogroup" || elt == "menulist")
           preftype = "int";
       }
-      var prefvalue; 
+      var prefvalue;
       if (elt == "checkbox")
         prefvalue = prefElements[i].checked;
       else if (elt == "button")
@@ -130,7 +130,7 @@ var prefUtils =
         case "color":
         case "string":
         default:
-          return pref.getCharPref(aPrefString); 
+          return pref.getCharPref(aPrefString);
       }
     }catch(e) {
       if(_DEBUG) {
@@ -165,6 +165,7 @@ var prefUtils =
       if(_DEBUG) dump(e + "\n");
     }
   },
+
 
   pickPath: function(aId)
   {

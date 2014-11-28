@@ -38,6 +38,7 @@ var pCookie =
   urlbox: null,
   permMan: null,
 
+
   init: function()
   {
     var addonBar = document.getElementById("addon-bar");
@@ -54,13 +55,15 @@ var pCookie =
       gBrowser.addProgressListener(pCookieProgressListener);
     }catch(e){}
   },
-  
+
+
   exit: function()
   {
     try {
       gBrowser.removeProgressListener(pCookieProgressListener);
     }catch(e){}
   },
+
 
   permit: function()
   {
@@ -86,6 +89,7 @@ var pCookie =
       "centerscreen,chrome,dialog,resizable=no,dependent",
       host, localUrl, window);
   },
+
 
   stripWWW: function(url)
   {
@@ -127,6 +131,7 @@ var pCookie =
       urlfield.disabled = false;
   },
 
+
   updateStatus: function()
   {
     var label = document.getElementById("stateValue");
@@ -146,6 +151,7 @@ var pCookie =
     }
   },
 
+
   onDialogOK: function()
   {
     var url = window.arguments[1];
@@ -153,7 +159,7 @@ var pCookie =
     if(permMan == null) return;
     var rgroup = document.getElementById("pRadiogroup");
     var sel = rgroup.selectedItem.id;
-    var action; 
+    var action;
     if(sel == "allow")
       action = permMan.ALLOW_ACTION;
     else if (sel == "session")
@@ -236,7 +242,7 @@ var pCookie =
       var button = document.getElementById("pcookie-status-button");
       if(!button)
         return;
-        
+
       switch (state) {
         case 0: button.setAttribute("status", "notset");
           break;
@@ -254,4 +260,3 @@ var pCookie =
 
 addEventListener("load", pCookie.init, false);
 addEventListener("unload", pCookie.exit, false);
-

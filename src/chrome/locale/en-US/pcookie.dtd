@@ -1,4 +1,3 @@
-
 <!ENTITY  window.title    "Cookie Permissions">
 
 <!ENTITY  label.status    "Current Status:">
@@ -9,5 +8,3 @@
 <!ENTITY  label.remove    "Remove">
 
 <!ENTITY  label.tabs      "Set permissions for all open tabs">
-
-

@@ -1,4 +1,4 @@
-The following liscense applies to all files
+The following license applies to all files
 
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
@@ -19,7 +19,8 @@ The following liscense applies to all files
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- * 
+ *   - Todd Eddy (https://github.com/vrillusions)
+ *   - Magrath (https://github.com/magrath)
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
