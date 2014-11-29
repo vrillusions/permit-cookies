@@ -17,7 +17,7 @@
 
   <vbox>
     <hbox align="center">
-      <checkbox id="stripwww" preftype="bool" prefstring="pcookies.stripwww"
+      <checkbox id="stripwww" preftype="bool" prefstring="extensions.pcookie.stripwww"
           label="&label.strip;"/>
     </hbox>
   </vbox>

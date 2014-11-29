@@ -41,13 +41,15 @@ var pCookie =
 
   init: function()
   {
-    var addonBar = document.getElementById("addon-bar");
-    if (addonBar) {
+    // If this is first time run then add button to addon bar
+    // TODO: consider making this an int and 'migratedVersion' or similar to
+    // allow updating preferences on first load of new version
+    if (prefUtils.getPref("bool", "extensions.pcookie.firstrun")) {
+      prefUtils.setPref("bool", "extensions.pcookie.firstrun", false)
+      var addonBar = document.getElementById("addon-bar");
       if (!document.getElementById("pcookie-status-button")) {
-        var addonBarCloseButton = document.getElementById("addonbar-closebutton")
-        //This is to force the button to the left side
-        //addonBar.insertItem("pcookie-status-button", addonBarCloseButton.nextSibling);
         addonBar.insertItem("pcookie-status-button");
+        addonBar.setAttribute("currentset", addonBar.currentSet);
         addonBar.collapsed = false;
       }
     }
@@ -78,10 +80,10 @@ var pCookie =
 
     var sdom = host;
     try {
-      if (prefUtils.getPref("bool", "pcookies.stripwww"))
+      if (prefUtils.getPref("bool", "extensions.pcookie.stripwww"))
         sdom = pCookie.stripWWW(host);
     } catch(e) {
-      prefUtils.setPref("bool", "pcookies.stripwww", false)
+      prefUtils.setPref("bool", "extensions.pcookie.stripwww", false)
     }
     localUrl.host = sdom;
     host = sdom;
@@ -190,7 +192,7 @@ var pCookie =
     for (var i=0; i<browsers.length; ++i) {
       var webNav = browsers[i].webNavigation;
       var host = webNav.currentURI.host;
-    if (prefUtils.getPref("bool", "pcookies.stripwww"))
+    if (prefUtils.getPref("bool", "extensions.pcookie.stripwww"))
         host = pCookie.stripWWW(host);
       if(host == "" || host == " ")
         continue;

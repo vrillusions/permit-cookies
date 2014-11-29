@@ -1,0 +1,48 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+#pcookie-status-button {
+  list-style-image: url("chrome://pcookie/skin/classic/notset16.png");
+}
+
+#pcookie-status-button[status="notset"] {
+  list-style-image: url("chrome://pcookie/skin/classic/notset16.png");
+}
+
+#pcookie-status-button[status="allowed"] {
+  list-style-image: url("chrome://pcookie/skin/classic/allowed16.png");
+}
+
+#pcookie-status-button[status="blocked"] {
+  list-style-image: url("chrome://pcookie/skin/classic/blocked16.png");
+}
+
+#pcookie-status-button[status="session"] {
+  list-style-image: url("chrome://pcookie/skin/classic/session16.png");
+}
+
+/* Australis icons */
+#pcookie-status-button[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #pcookie-status-button {
+  list-style-image: url("chrome://pcookie/skin/classic/notset32.png");
+}
+
+#pcookie-status-button[status="notset"][cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="notset"] {
+  list-style-image: url("chrome://pcookie/skin/classic/notset32.png");
+}
+
+#pcookie-status-button[status="allowed"][cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="allowed"] {
+  list-style-image: url("chrome://pcookie/skin/classic/allowed32.png");
+}
+
+#pcookie-status-button[status="blocked"][cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="blocked"] {
+  list-style-image: url("chrome://pcookie/skin/classic/blocked32.png");
+}
+
+#pcookie-status-button[status="session"][cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="session"] {
+  list-style-image: url("chrome://pcookie/skin/classic/session32.png");
+}

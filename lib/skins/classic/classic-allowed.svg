@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg5952"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="classic-allowed.svg"
+   inkscape:export-filename="D:\code\permit-cookies\src\chrome\skin\classic\classic\allowed32.png"
+   inkscape:export-xdpi="45"
+   inkscape:export-ydpi="45">
+  <title
+     id="title6632">pcookie status icon</title>
+  <defs
+     id="defs5954">
+    <filter
+       inkscape:collect="always"
+       id="filter6606"
+       x="-0.15747533"
+       width="1.3149507"
+       y="-0.13264908"
+       height="1.2652982">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.69400693"
+         id="feGaussianBlur6608" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="6.22033"
+     inkscape:cx="28.709289"
+     inkscape:cy="32"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1035"
+     inkscape:window-height="800"
+     inkscape:window-x="762"
+     inkscape:window-y="197"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5957">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>pcookie status icon</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Todd Eddy</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:source />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Shadow"
+     id="g5993"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:42.40739441px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;display:inline;filter:url(#filter6606);font-family:Arial;-inkscape-font-specification:Arial Bold"
+       x="2.6412351"
+       y="15.713553"
+       id="text5995"
+       sodipodi:linespacing="125%"
+       transform="matrix(4.2438172,0,0,4.243823,-5.0619197,-8.9208789)"><tspan
+         sodipodi:role="line"
+         id="tspan5997"
+         x="2.6412351"
+         y="15.713553"
+         style="font-size:16.96295738px;font-weight:bold;fill:#1a1a1a;fill-opacity:1;-inkscape-font-specification:Arial Bold">C</tspan></text>
+  </g>
+  <g
+     id="layer1"
+     inkscape:label="Text"
+     inkscape:groupmode="layer"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:179.96936035px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#00c800;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial Bold"
+       x="1.2967451"
+       y="52.913879"
+       id="text5339"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5341"
+         x="1.2967451"
+         y="52.913879"
+         style="font-size:71.98773956px;font-weight:bold;fill:#00c800;fill-opacity:1;-inkscape-font-specification:Arial Bold">C</tspan></text>
+  </g>
+</svg>
