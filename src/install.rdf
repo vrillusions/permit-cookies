@@ -19,7 +19,7 @@
     <em:name>Permit Cookies 2</em:name>
     <em:description>Set cookie permissions for the site you are viewing</em:description>
     <em:creator>Todd Eddy</em:creator>
-    <em:iconURL>chrome://pcookie/content/gorgias.png</em:iconURL>
+    <em:iconURL>chrome://pcookie/content/pcookie-main.png</em:iconURL>
     <em:optionsURL>chrome://pcookie/content/prefdialog.xul</em:optionsURL>
     <em:homepageURL>http://github.com/vrillusions/permit-cookies</em:homepageURL>
     <em:type>2</em:type>
