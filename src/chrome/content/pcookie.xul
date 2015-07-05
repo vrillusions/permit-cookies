@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://pcookie/skin/classic/pcookie.css" type="text/css"?>
+<!-- <?xml-stylesheet href="chrome://pcookie/skin/classic/pcookie.css" type="text/css"?> -->
 
 <overlay id="pcookie_overlay"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
