@@ -168,6 +168,19 @@ var prefUtils =
     }
   },
 
+  
+  deletePref: function(aPrefString)
+  {
+    if(_DEBUG) dump("in deletePref\n");
+    var pref = Components.classes["@mozilla.org/preferences-service;1"]
+        .getService(Components.interfaces.nsIPrefBranch);
+    try {
+      return pref.deleteBranch(aPrefString);
+    }catch(e) {
+      if(_DEBUG) dump(e + "\n");
+    }
+  },
+
 
   pickPath: function(aId)
   {

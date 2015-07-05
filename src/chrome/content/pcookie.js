@@ -41,23 +41,41 @@ var pCookie =
 
   init: function()
   {
-    pCookie.setSkin();
   
-    // If this is first time run then add button to addon bar
-    // TODO: consider making this an int and 'migratedVersion' or similar to
-    // allow updating preferences on first load of new version
-    if (prefUtils.getPref("bool", "extensions.pcookie.firstrun")) {
-      prefUtils.setPref("bool", "extensions.pcookie.firstrun", false)
+    // Revisions and what happened:
+    // 1 - (v2.0.0) adds button to addon bar, migrates v1 preferences, set classic skin
+    // 0 - default
+    if (prefUtils.getPref("int", "extensions.pcookie.revision") < 1) {
+      // Add pref
       var addonBar = document.getElementById("addon-bar");
       if (!document.getElementById("pcookie-status-button")) {
         addonBar.insertItem("pcookie-status-button");
         addonBar.setAttribute("currentset", addonBar.currentSet);
         addonBar.collapsed = false;
       }
+      
+      // Migrate old preference if exists
+      var oldstripwww = prefUtils.getPref("bool", "pcookies.stripwww");
+      if (oldstripwww != "!/!ERROR_UNDEFINED_PREF!/!") {
+        prefUtils.setPref("bool", "extensions.pcookie.stripwww", oldstripwww);
+        prefUtils.deletePref("pcookies.stripwww");        
+      }
+      
+      // Set skin to 'classic' for backwards compatibility
+      // TODO: change the default to new style later?
+      // Don't use default prefs since if we do change the default later it will
+      // change anyone that's using the classic skin.
+      prefUtils.setPref("string", "extensions.pcookie.skin", "classic");
+      
+      prefUtils.setPref("int", "extensions.pcookie.revision", 1);
     }
+
+    pCookie.setSkin();
+
     try {
       gBrowser.addProgressListener(pCookieProgressListener);
     }catch(e){}
+
   },
 
   
@@ -70,7 +88,6 @@ var pCookie =
     var ios = Components.classes["@mozilla.org/network/io-service;1"]
       .getService(Components.interfaces.nsIIOService);
     var uri = ios.newURI("chrome://pcookie/skin/" + skin + "/pcookie.css", null, null);
-    console.debug(uri);
     if(!sss.sheetRegistered(uri, sss.USER_SHEET))
       sss.loadAndRegisterSheet(uri, sss.USER_SHEET);
   },
