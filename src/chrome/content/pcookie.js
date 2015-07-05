@@ -41,16 +41,7 @@ var pCookie =
 
   init: function()
   {
-    // Set a custom stylesheet based on user preference
-    var skin = prefUtils.getPref("string", "extensions.pcookie.skin");
-    var sss = Components.classes["@mozilla.org/content/style-sheet-service;1"]
-      .getService(Components.interfaces.nsIStyleSheetService);
-    var ios = Components.classes["@mozilla.org/network/io-service;1"]
-      .getService(Components.interfaces.nsIIOService);
-    var uri = ios.newURI("chrome://pcookie/skin/" + skin + "/pcookie.css", null, null);
-    console.debug(uri);
-    if(!sss.sheetRegistered(uri, sss.USER_SHEET))
-      sss.loadAndRegisterSheet(uri, sss.USER_SHEET);
+    pCookie.setSkin();
   
     // If this is first time run then add button to addon bar
     // TODO: consider making this an int and 'migratedVersion' or similar to
@@ -67,6 +58,21 @@ var pCookie =
     try {
       gBrowser.addProgressListener(pCookieProgressListener);
     }catch(e){}
+  },
+
+  
+  setSkin: function()
+  {
+    // Set a custom stylesheet based on user preference
+    var skin = prefUtils.getPref("string", "extensions.pcookie.skin");
+    var sss = Components.classes["@mozilla.org/content/style-sheet-service;1"]
+      .getService(Components.interfaces.nsIStyleSheetService);
+    var ios = Components.classes["@mozilla.org/network/io-service;1"]
+      .getService(Components.interfaces.nsIIOService);
+    var uri = ios.newURI("chrome://pcookie/skin/" + skin + "/pcookie.css", null, null);
+    console.debug(uri);
+    if(!sss.sheetRegistered(uri, sss.USER_SHEET))
+      sss.loadAndRegisterSheet(uri, sss.USER_SHEET);
   },
 
 

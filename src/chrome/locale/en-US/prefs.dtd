@@ -1,2 +1,5 @@
 <!ENTITY  window.title  "Permit Cookies Options">
 <!ENTITY  label.strip  "Strip www from URL:s">
+<!ENTITY  label.skin   "Skin">
+<!ENTITY  label.skinClassic     "classic">
+<!ENTITY  label.skinDreadnaut   "dreadnaut">

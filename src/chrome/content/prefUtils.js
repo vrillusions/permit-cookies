@@ -98,13 +98,15 @@ var prefUtils =
       else if (elt == "button")
         prefvalue = prefElements[i].checked;
       else if (elt == "radiogroup" || elt == "menulist")
-        prefvalue = prefElements[i].selectedIndex;
+        // prefvalue = prefElements[i].selectedIndex; // saves index
+        prefvalue = prefElements[i].value; // saves actual value
       else if (elt == "textbox")
         prefvalue = prefElements[i].value;
 
       prefUtils.setPref(preftype, prefstring, prefvalue);
       if(_DEBUG) dump("setpref:" +prefstring+" "+ prefvalue + "\n");
     }
+    pCookie.setSkin();
     // notify observers
     if (aObserverTopicId)
     Components.classes["@mozilla.org/observer-service;1"]
