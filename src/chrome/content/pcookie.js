@@ -37,6 +37,7 @@ var pCookie =
 {
   urlbox: null,
   permMan: null,
+  activeSkin: "",
 
 
   init: function()
@@ -88,8 +89,14 @@ var pCookie =
     var ios = Components.classes["@mozilla.org/network/io-service;1"]
       .getService(Components.interfaces.nsIIOService);
     var uri = ios.newURI("chrome://pcookie/skin/" + skin + "/pcookie.css", null, null);
+
+    if(pCookie.activeSkin != "") {
+      if(sss.sheetRegistered(pCookie.activeSkin, sss.USER_SHEET))
+        sss.unregisterSheet(pCookie.activeSkin, sss.USER_SHEET);
+    }
     if(!sss.sheetRegistered(uri, sss.USER_SHEET))
       sss.loadAndRegisterSheet(uri, sss.USER_SHEET);
+    pCookie.activeSkin = uri;
   },
 
 
