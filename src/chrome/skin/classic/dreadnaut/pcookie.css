@@ -2,47 +2,47 @@
 
 
 #pcookie-status-button {
-  list-style-image: url("notset.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/notset.png");
 }
 
 #pcookie-status-button[status="notset"] {
-  list-style-image: url("notset.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/notset.png");
 }
 
 #pcookie-status-button[status="allowed"] {
-  list-style-image: url("allowed.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/allowed.png");
 }
 
 #pcookie-status-button[status="blocked"] {
-  list-style-image: url("blocked.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/blocked.png");
 }
 
 #pcookie-status-button[status="session"] {
-  list-style-image: url("session.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/session.png");
 }
 
 /* Australis icons */
 #pcookie-status-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #pcookie-status-button {
-  list-style-image: url("notset-32.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/notset-32.png");
 }
 
 #pcookie-status-button[status="notset"][cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="notset"] {
-  list-style-image: url("notset-32.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/notset-32.png");
 }
 
 #pcookie-status-button[status="allowed"][cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="allowed"] {
-  list-style-image: url("allowed-32.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/allowed-32.png");
 }
 
 #pcookie-status-button[status="blocked"][cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="blocked"] {
-  list-style-image: url("blocked-32.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/blocked-32.png");
 }
 
 #pcookie-status-button[status="session"][cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #pcookie-status-button[status="session"] {
-  list-style-image: url("session-32.png");
+  list-style-image: url("chrome://pcookie/skin/dreadnaut/session-32.png");
 }
