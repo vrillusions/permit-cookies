@@ -1,0 +1,5 @@
+# Contributing information
+
+## Licensing
+
+By submitting patches, pull requests, or any other input you agree to and are legally permitted to license it under the terms of this project.  See `LICENSE` for details.
