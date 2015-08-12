@@ -3,3 +3,17 @@
 I'm not the original author.  It appears to be abandoned by him and so I'm just bumping the supported firefox version number (note: firefox doesn't automatically disable extensions so this no longer applies).  I'm only going to fix bugs related to new versions of firefox (maybe).  May add minor enhancements but a key feature of this add on is that it's very lean and I plan to keep it that way.
 
 - [author's site](http://gorgias.de/mfe/)
+
+## Skinning
+
+Permit cookies supports multiple icon sets called skins.  The process is still pretty manual but the intent is to not support 100 different skins that no one will want to use.
+
+- First look over [contributing.mkd](contributing info) and make sure you're ok with it.  By submitting a pull request you agree to everything listed there.
+- skin name can be anything you wish, just keep it short and all lowercase.  In below examples replace `<skinname>` with your chosen name, without the `<>`s.
+- (optional) copy the source svg files (if that's what you used) to `lib/skins/<skinname>`.
+- copy `src/chrome/skin/classic/` to `src/chrome/skin/<skinname>/`
+- in that new folder, edit `pcookie.css` and change all the urls to point to your skin name.  Typically this will just be changing `/classic/` to `/<skinname>/`.
+- edit `src/chrome/content/prefdialog.xul` and add your skin to `radiogroup` section.  Just copy one of the existing lines and change the name of skin to your chosen skin.
+- edit `src/chrome/locale/<all local names>/prefs.dtd` and add a line for your skin.  If you know the translation of your skin name in a given language that would be great but if not can just use the English name
+
+After all that you can build and test that you can select the skin in preferences.  Information on how to build and test are TBD.
