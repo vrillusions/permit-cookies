@@ -37,8 +37,8 @@ var pCookie =
 {
   urlbox: null,
   permMan: null,
+  appInfo: null,
   activeSkin: "",
-
 
   init: function()
   {
@@ -76,7 +76,6 @@ var pCookie =
     try {
       gBrowser.addProgressListener(pCookieProgressListener);
     }catch(e){}
-
   },
 
   
@@ -150,14 +149,41 @@ var pCookie =
 
   },
 
+  
+  getAppInfo: function()
+  {
+    if(pCookie.appInfo == null)
+      pCookie.appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+                        .getService(Components.interfaces.nsIXULAppInfo);
+    return pCookie.appInfo;
+  },
+  
+  
+  browserVersionAtLeast: function(aMinVersion)
+  {
+    var appInfo = pCookie.getAppInfo();
+    var versionComparator = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
+                            .getService(Components.interfaces.nsIVersionComparator);
+    var compareResult = versionComparator.compare(appInfo.platformVersion, aMinVersion);
+    if (compareResult < 0) {
+      // current version is lower than specified min version
+      return false;
+    }
+    else {
+      // current version either matches or is higher than specified min version
+      return true;
+    }
+  },  
 
+  
   initDialog: function()
   {
     var tabsbox = document.getElementById("tabs");
     if(window.arguments[2].gBrowser.browsers.length <= 1)
       tabsbox.setAttribute("hidden", true);
 
-    var inurl = window.arguments[0];
+    var inurl = window.arguments[1].prePath;
+
     pCookie.urlbox = document.getElementById("url");
     pCookie.urlbox.value = inurl;
     pCookie.updateStatus();
@@ -194,10 +220,26 @@ var pCookie =
     }
   },
 
+  
+  makeURI: function(aURL, aOriginCharset, aBaseURI)
+  {
+    if (typeof(aOriginCharset)==='undefined') aOriginCharset = null;
+    if (typeof(aBaseURI)==='undefined') aBaseURI = null;
+    
+    if ( aURL.match(/^http/) === null )
+    {
+      aURL = "http://".concat(aURL);
+    }
 
+    var ioService = Components.classes["@mozilla.org/network/io-service;1"]
+                    .getService(Components.interfaces.nsIIOService);
+    return ioService.newURI(aURL, aOriginCharset, aBaseURI);
+  },
+
+  
   onDialogOK: function()
   {
-    var url = window.arguments[1];
+    var uri = window.arguments[1];
     var permMan = pCookie.getPerm();
     if(permMan == null) return;
     var rgroup = document.getElementById("pRadiogroup");
@@ -216,12 +258,21 @@ var pCookie =
     }
     var outurl = pCookie.urlbox.value;
     if(outurl != "") {
-      url.host = outurl;
-      permMan.remove(outurl, "cookie");
+      // Mozilla bug: 1170200
+      if (pCookie.browserVersionAtLeast('42*')) {
+        // With Firefox v42 the remove function takes a nsIURI type now
+        var oldurl = pCookie.makeURI(outurl);
+      } else {
+        // Firefox version is less than 42, oldurl should be a string
+        // TODO:2015-08-13: Remove this check and set minVersion to 42 in
+        // a year or two.
+        var oldurl = outurl;
+      } 
+      permMan.remove(oldurl, "cookie");
       if(sel != "remove")
-        permMan.add(url, "cookie", action);
+        permMan.add(uri. "cookie", action);
     }
-    window.arguments[2].pCookie.updateButton(url);
+    window.arguments[2].pCookie.updateButton(uri);
   },
 
 
@@ -254,13 +305,10 @@ var pCookie =
   {
     // not set:0  allowed:1  blocked:2 session:8
     var strings = document.getElementById("pcookieStrings");
-    var url = pCookie.urlbox.value;
+    var uri = pCookie.makeURI(pCookie.urlbox.value);
     var permMan = pCookie.getPerm();
     var retval = "error";
     if(permMan == null) return retval;
-    var uri = Components.classes["@mozilla.org/network/standard-url;1"]
-        .createInstance(Components.interfaces.nsIURI);
-    uri.spec = url;
     var state = permMan.testPermission(uri, "cookie");
     switch (state) {
       case 0: retval = strings.getString("status.notset");
