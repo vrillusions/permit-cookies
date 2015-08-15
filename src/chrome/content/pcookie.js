@@ -270,7 +270,7 @@ var pCookie =
       } 
       permMan.remove(oldurl, "cookie");
       if(sel != "remove")
-        permMan.add(uri. "cookie", action);
+        permMan.add(uri, "cookie", action);
     }
     window.arguments[2].pCookie.updateButton(uri);
   },
