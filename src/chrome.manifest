@@ -1,11 +1,7 @@
 overlay chrome://browser/content/browser.xul chrome://pcookie/content/pcookie.xul
 content pcookie chrome/content/
 
-skin pcookie classic/1.0 chrome/skin/classic/
-skin pcookie dreadnaut chrome/skin/dreadnaut/
-skin pcookie krispy chrome/skin/krispy/
-style chrome://browser/content/browser.xul chrome://pcookie/skin/pcookie.css
-style chrome://global/content/customizeToolbar.xul chrome://pcookie/skin/pcookie.css
+# Sets the base directory for all skins
+skin pcookie pcookie/1.0 chrome/skin/
 
 locale pcookie en-US chrome/locale/en-US/
-locale pcookie sv-SE chrome/locale/sv-SE/
