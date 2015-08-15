@@ -5,4 +5,3 @@ content pcookie chrome/content/
 skin pcookie pcookie/1.0 chrome/skin/
 
 locale pcookie en-US chrome/locale/en-US/
-locale pcookie sv-SE chrome/locale/sv-SE/
