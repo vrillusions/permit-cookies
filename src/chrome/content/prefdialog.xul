@@ -27,6 +27,7 @@
     <radiogroup id="skin" orient="vertical" preftype="string" prefstring="extensions.pcookie.skin">
       <radio label="&label.skinClassic;" value="classic" id="classic"/>
       <radio label="&label.skinDreadnaut;" value="dreadnaut" id="dreadnaut"/>
+      <radio label="&label.skinKrispy;" value="krispy" id="krispy"/>
     </radiogroup>
   </groupbox>
 
