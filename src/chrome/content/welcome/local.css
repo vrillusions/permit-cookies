@@ -1,0 +1,11 @@
+/* where to make your changes */
+body {
+  display: block;
+  /* text-align: center; */
+  margin: 2em auto;
+  max-width: 50em;
+}
+
+.informational {
+  background-color: #ddd;
+}

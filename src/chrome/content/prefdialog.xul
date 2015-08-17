@@ -7,20 +7,20 @@
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
          xmlns:html="http://www.w3.org/1999/xhtml"
          title="&window.title;"
+         buttons="disclosure,cancel,accept"
          onload="prefUtils.onLoad('pref-pcookie');"
          ondialogaccept="prefUtils.onOK('pref-pcookie', ' ');"
-         height="120"
-         width="250"
+         ondialogdisclosure="pCookie.openWhatsNew();"
          persist="screenX screenY">
 
   <script type="application/x-javascript" src="chrome://pcookie/content/prefUtils.js"/>
   <script type="application/x-javascript" src="chrome://pcookie/content/pcookie.js"/>
 
   <vbox>
-    <hbox align="center">
-      <checkbox id="strip_www" preftype="bool" prefstring="extensions.pcookie.strip_www"
-          label="&label.strip;"/>
-    </hbox>
+    <checkbox id="strip_www" preftype="bool" prefstring="extensions.pcookie.strip_www"
+        label="&label.strip;"/>
+    <checkbox id="modify_http_and_https" preftype="bool" prefstring="extensions.pcookie.modify_http_and_https"
+        label="&label.modify_http_and_https;"/>
   </vbox>
   <groupbox>
     <caption label="&label.skin;"/>

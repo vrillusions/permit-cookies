@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>What's New - Permit Cookies 2</title>
+
+    <link rel="stylesheet" href="picnic-v4.1-plugins.min.css">
+    <link rel="stylesheet" href="local.css">
+</head>
+<body>
+
+<article class="card informational"><p>You will only see this page when there are significant changes made that may affect your experience and only once. If you don't want to read this now you can view it any time by going to permit cookies 2 options.</p></article>
+
+<h1>Information and What's New in Permit Cookies</h1>
+
+<h2>Important changes regarding update to v2.x</h2>
+
+<p>Several changes were made with the v2.0 update that may throw off some long time users so here's a quick rundown.<p>
+
+<h3>Icon sets</h3>
+
+<p>Support has been added for multiple icon sets.  There's currently only a few.  The original one is called <em>classic</em> and has been updated with larger icons to match current default theme of Firefox.  In addition a new theme called <em>dreadnaut</em> is designed to make it easier for people with color blindness to discern which icon is which.  It is also the new icon for the addon itself.</p>
+
+<p>Unfortunately there's no reliable way to tell if the addon was updated or was installed fresh.  Because of this the default icon set will be <em>dreadnaut</em> as I feel that would be the preferred one for new users.  This will likely bother existing users and I apologize for that.  You can change it back to <em>classic</em> in preferences and don't even need to restart afterwards.</p>
+
+<h3>Change in location of preferences</h3>
+
+<p>This is an under-the-hood change but preferences have been properly namespaced. That means any options used by this addon can be found in preferences with the prefix <code>extensions.pcookie</code>.  On first run old settings should be migrated over and then the old preferences are deleted.  If you downgrade back to v1 you will lose those settings.  Granted only option is if you wanted to strip <code>www</code> from url</p>
+
+<h3>Firefox v42+</h3>
+
+<p>In Firefox v42 the permissions for cookies have changed.  Before you could just set a preference for a domain like <samp>google.com</samp>.  Now it must be a full url with either <samp>http://</samp> or <samp>https://</samp> and settings set for one don't affect the other.  Firefox will migrate your existing preferences by creating both so you'll have a <samp>http://google.com</samp> and <samp>https://google.com</samp> and preferences you set can be different between the two.  There was also a breaking api change made that breaks Permit Cookies prior to v2.0.  While that API fix has been made there's still no automated way of handling the same domain with multiple protocols.  I'm planning on adding an option similar to the setting that strips www from domain and have operation work on both <samp>http://</samp> and <samp>https://</samp> at the same time but it's not there currently.</p>
+
+<h3>New preference: modify both http and https (v42+)</h3>
+
+<p>Because of the change above I added a new preference that will modify both <samp>http://</samp> and <samp>https://</samp> URLs at the same time.  It is checked by default so it works the same way it did prior to v42.  If you have under version 42 the setting will make no difference</p>
+
+<article class="card informational"><p>Since now there's a welcome page here's some additional information that may be of use.</p></article>
+
+<h2>Feature creep</h2>
+
+<p>One of the benefits for Permit Cookies is it does one thing and isn't bloated down with other features that you don't want.  The additional features added mostly came out of need.  For example the case made for a new icon set made sense but I hate change so wanted to be able to use the old icons still.  It's also why I may be stingy about adding new icon sets since I don't want to load it down senslessly with a bunch of images.</p>
+
+<h2>Privacy</h2>
+
+<p>I wanted to reassure that all these new features and any new fixes have privacy as a number one rule. For example even this page is not hosted on a remote site nor does it request content from a remote site.  The addon does not send any usage information.  Only metrics I see are what Mozilla reports regarding number of installs and which operating system and such.  This is another reason for my stingyness on new icon sets since I don't want to pull them from any third party.</p>
+
+<h2>Reporting bugs</h2>
+
+<p>Just a quick note that while I try to stay up to date with comments on Mozilla's site please report any issues you have to the project's page on <a href="https://github.com/vrillusions/permit-cookies" title="vrillusions/permit-cookies">github</a>. It makes it easier to track and to ask for any additional information.</p>
+
+</body>
+</html>

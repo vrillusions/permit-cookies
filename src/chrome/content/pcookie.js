@@ -42,9 +42,8 @@ var pCookie =
 
   init: function()
   {
-  
     // Revisions and what happened:
-    // 1 - (v2.0.0) adds button to addon bar, migrates v1 preferences, set classic skin
+    // 1 - (v2.0.0) adds button to addon bar, migrates v1 preferences, set dreadnaut skin
     // 0 - default
     if (prefUtils.getPref("int", "extensions.pcookie.revision") < 1) {
       // Add pref
@@ -62,27 +61,60 @@ var pCookie =
         prefUtils.deletePref("pcookies.stripwww");        
       }
       
-      // Set skin to 'classic' for backwards compatibility
-      // TODO: change the default to new style later?
+      // Would prefer to keep this at classic for upgrades but there's no way to
+      // determine if this is an upgrade or new install.  The welcome page that
+      // loads will describe the change and how to change it back.
       // Don't use default prefs since if we do change the default later it will
-      // change anyone that's using the classic skin.
-      prefUtils.setPref("string", "extensions.pcookie.skin", "classic");
+      // change anyone that's using the dreadnaut skin.
+      prefUtils.setPref("string", "extensions.pcookie.skin", "dreadnaut");
       
       prefUtils.setPref("int", "extensions.pcookie.revision", 1);
     }
 
     pCookie.setSkin();
 
+    // Revisions and what happened:
+    // 1 - (v2.0.0) mention all the changes done in version 2.0
+    // 0 - default
+    if (prefUtils.getPref("int", "extensions.pcookie.whats_new_revision") < 1) {
+      // IMPORTANT: set the preference before loading page or you could get an infinite loop going
+      prefUtils.setPref("int", "extensions.pcookie.whats_new_revision", 1);
+      // Need a pause or the start page overwrites it
+      pCookie.openWhatsNew(5);
+    }
+    
     try {
       gBrowser.addProgressListener(pCookieProgressListener);
     }catch(e){}
   },
 
+  openWhatsNew: function(aDelay)
+  {
+    // Opens the whatsnew page in a new tab and selects it, optioanlly with a delay in seconds
+    if (typeof(aDelay)!=='number') aDelay = 0;
+    
+    var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
+             .getService(Components.interfaces.nsIWindowMediator);
+    var win = wm.getMostRecentWindow('navigator:browser');
+    
+    if (aDelay > 0) {
+      win.setTimeout(function() {
+        win.gBrowser.selectedTab = win.gBrowser.addTab("chrome://pcookie/content/welcome/whatsnew.html");
+      }, aDelay * 1000);
+    } else {
+      win.gBrowser.selectedTab = win.gBrowser.addTab("chrome://pcookie/content/welcome/whatsnew.html");
+    }
+  },
   
   setSkin: function()
   {
     // Set a custom stylesheet based on user preference
     var skin = prefUtils.getPref("string", "extensions.pcookie.skin");
+    if (skin == "") {
+      console.warn("extensions.pcookie.skin is blank, reset to dreadnaut");  
+      prefUtils.setPref("string", "extensions.pcookie.skin", "dreadnaut");
+      skin = "dreadnaut";
+    }
     var sss = Components.classes["@mozilla.org/content/style-sheet-service;1"]
       .getService(Components.interfaces.nsIStyleSheetService);
     var ios = Components.classes["@mozilla.org/network/io-service;1"]
@@ -182,8 +214,13 @@ var pCookie =
     if(window.arguments[2].gBrowser.browsers.length <= 1)
       tabsbox.setAttribute("hidden", true);
 
-    var inurl = window.arguments[1].prePath;
-
+    // urlbox shouldn't contain scheme if we're going to modify both
+    if (prefUtils.getPref("bool", "extensions.pcookie.modify_http_and_https")) {
+      var inurl = window.arguments[1].host;
+    } else {
+      var inurl = window.arguments[1].prePath;
+    }
+    
     pCookie.urlbox = document.getElementById("url");
     pCookie.urlbox.value = inurl;
     pCookie.updateStatus();
@@ -258,23 +295,45 @@ var pCookie =
     }
     var outurl = pCookie.urlbox.value;
     if(outurl != "") {
-      // Mozilla bug: 1170200
-      if (pCookie.browserVersionAtLeast('42*')) {
-        // With Firefox v42 the remove function takes a nsIURI type now
+      if (prefUtils.getPref("bool", "extensions.pcookie.modify_http_and_https")) {
+        // It's actually easier to work on an NSUri object
         var oldurl = pCookie.makeURI(outurl);
+        var httpurl = "http://".concat(oldurl.host);
+        var httpsurl = "https://".concat(oldurl.host);
+        pCookie.removePermission(httpurl);
+        pCookie.removePermission(httpsurl);
+        if(sel != "remove") {
+          permMan.add(pCookie.makeURI(httpurl), "cookie", action);
+          permMan.add(pCookie.makeURI(httpsurl), "cookie", action);
+        }
       } else {
-        // Firefox version is less than 42, oldurl should be a string
-        // TODO:2015-08-13: Remove this check and set minVersion to 42 in
-        // a year or two.
-        var oldurl = outurl;
-      } 
-      permMan.remove(oldurl, "cookie");
-      if(sel != "remove")
-        permMan.add(uri, "cookie", action);
+        pCookie.removePermission(outurl);
+        if(sel != "remove")
+          permMan.add(pCookie.makeURI(outurl), "cookie", action);
+      }
     }
     window.arguments[2].pCookie.updateButton(uri);
   },
 
+  
+  removePermission: function(aURL) {
+    // Takes two parameters:
+    //   aURL - string - the URL to remove permission for, must be a string not NSUri
+    if (typeof(aURL)!=='string') return;
+    
+    var permMan = pCookie.getPerm();
+    var url = aURL;
+    
+    // Mozilla bug: 1170200
+    if (pCookie.browserVersionAtLeast('42*')) {
+      // With Firefox v42 the remove function takes a nsIURI type now
+      // TODO:2015-08-13: Remove this check and set minVersion to 42 in
+      // a year or two.
+      var url = pCookie.makeURI(aURL);
+    }
+    permMan.remove(url, "cookie");
+  },
+  
 
   setForTabs: function(aAction, aWindow) {
     var permMan = pCookie.getPerm();
