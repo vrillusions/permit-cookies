@@ -7,6 +7,7 @@ The major version was bumped to 2 because this is not compatible with version 1.
 * Fix bug caused by an api change in Firefox v42 (gh-17). Thanks "Joe G" for reporting it.
 * Support multiple icon sets (gh-6)
 * THE DEFAULT ICON SET IS STILL SUBJECT TO CHANGE BEFORE RELASE new default icon set (see gh-6). Currently all users will start out with the original icon set (now called `classic`). Will likely change the default to new icon set called `dreadnaut` but want to default to `classic`.  Thanks to @dreadnaut for making it.
+* Additionally added `krispy` icon set (gh-14). Thanks @zakmac
 * Remove the Swedish translation (gh-23). Most of the strings there were English already.  May bring back multiple languages once I hook in some crowdsource translation service.
 
 
