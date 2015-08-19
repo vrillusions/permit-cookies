@@ -58,7 +58,7 @@ var pCookie =
       // Migrate old preference if exists
       var oldstripwww = prefUtils.getPref("bool", "pcookies.stripwww");
       if (oldstripwww != "!/!ERROR_UNDEFINED_PREF!/!") {
-        prefUtils.setPref("bool", "extensions.pcookie.stripwww", oldstripwww);
+        prefUtils.setPref("bool", "extensions.pcookie.strip_www", oldstripwww);
         prefUtils.deletePref("pcookies.stripwww");        
       }
       
@@ -120,10 +120,10 @@ var pCookie =
 
     var sdom = host;
     try {
-      if (prefUtils.getPref("bool", "extensions.pcookie.stripwww"))
+      if (prefUtils.getPref("bool", "extensions.pcookie.strip_www"))
         sdom = pCookie.stripWWW(host);
     } catch(e) {
-      prefUtils.setPref("bool", "extensions.pcookie.stripwww", false)
+      prefUtils.setPref("bool", "extensions.pcookie.strip_www", false)
     }
     localUrl.host = sdom;
     host = sdom;
@@ -284,7 +284,7 @@ var pCookie =
     for (var i=0; i<browsers.length; ++i) {
       var webNav = browsers[i].webNavigation;
       var host = webNav.currentURI.host;
-    if (prefUtils.getPref("bool", "extensions.pcookie.stripwww"))
+    if (prefUtils.getPref("bool", "extensions.pcookie.strip_www"))
         host = pCookie.stripWWW(host);
       if(host == "" || host == " ")
         continue;
