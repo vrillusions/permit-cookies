@@ -1,17 +1,17 @@
-## 2.0 - released TBD
+## 2.0 - released 2015-08-29
 
 Lots of changes here including fixes for an api change Mozilla did in v42.0 of Firefox.  It also now supports multiple icon sets and includes a set that should be easier to see for people with color blindness.  It is also the new icon for the addon.
 
 The major version was bumped to 2 because this is not compatible with version 1. It uses different preferences.  While it should migrate those settings over to new version there's no way to go back to version 1 settings.  In version 1 the only option was to strip www from urls.  Any cookie exceptions you made won't be affected.
 
-* *(BREAKING)* Properly namedspace addon preferences so they all begin with `extensions.pcookie.`. (gh-7, gh-12). Old settings will be migrated to new namespace and old preference will be deleted. If you go back to a previous version the setting will not be correct.  Only preference in v1.x was the option to strip www from URLs.  This will **NOT** affect the exceptions you have created for sites.
+* *(BREAKING)* Properly namedspace addon preferences so they all begin with `extensions.pcookie.`. (#7, #12). Old settings will be migrated to new namespace and old preference will be deleted. If you go back to a previous version the setting will not be correct.  Only preference in v1.x was the option to strip www from URLs.  This will **NOT** affect the exceptions you have created for sites.
 * Now displays a welcome page on first load.  I know these can get to be annoying but it will only show on new versions if something important happened.  You can view it at any time via addon preferences. (#23)
-* Fix bug caused by an api change in Firefox v42 (gh-17). Thanks "Joe G" for reporting it.
+* Fix bug caused by an api change in Firefox v42 (#17). Thanks "Joe G" for reporting it.
 * Because in Firefox v42 they're going to use URIs for everything this can throw off setting permissions.  Meaning you could set the option for http but not https.  Added a new preference that defaults to enabled that will modify both http and https at the same time.  This won't affect you until Firefox v42 is out and the default operates similar to how permit cookies has always worked (#21)
-* Support multiple icon sets (gh-6)
-* *(BREAKING)* (ok not really breaking but will throw off people when updating) New default icon set (see gh-6). Currently all users will start out with the new icon set (called `dreadnaut`).  If you still want to use the old icons they're in preferences and choose the `classic` icon set.  Thanks to @dreadnaut for making new one.
-* Additionally added `krispy` icon set (gh-14). Thanks @zakmac
-* Remove the Swedish translation (gh-23). Most of the strings there were English already.  May bring back multiple languages once I hook in some crowdsource translation service.
+* Support multiple icon sets (#6)
+* *(BREAKING)* (ok not really breaking but will throw off people when updating) New default icon set (see #6). Currently all users will start out with the new icon set (called `dreadnaut`).  If you still want to use the old icons they're in preferences and choose the `classic` icon set.  Thanks to @dreadnaut for making new one.
+* Additionally added `krispy` icon set (#14). Thanks @zakmac
+* Remove the Swedish translation (#23). Most of the strings there were English already.  May bring back multiple languages once I hook in some crowdsource translation service.
 
 
 ## Before 2.0
